@@ -1,5 +1,5 @@
 language: python
 # command to run tests
 script:
-  - unittest
+  - python -m unittest
 
