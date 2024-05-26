@@ -1,6 +1,10 @@
 language: python
 python:
   - "3.7"
+# Ensure necessary packages are installed
+install:
+  - pip install setuptools wheel twine
+  - pip install --upgrade urllib3  # Ensure urllib3 is compatible
 script:
 - python -m unittest
 deploy:
@@ -8,3 +12,5 @@ deploy:
   username: __token__
   password:
     secure: ROX+oHsDbt0AWJxEqPIb8UprIIE0L5JjB6qf+mhODpTaVCEqWa/1YeIAq8H917EHsFTNBAgU/FT/Jc7F05ZSqfaNObZi7uNnJb+gUAGVzkXrY8Xv42+Ko5Nryg6JKsDNzJL/2MyGE87/4Frc+gsxACVLFnTx06M2iCuDhNsET0BjlrAa5Fsl5RB6vXxjswq3YrUi20ZkEK5wGkpyAegwqgcZeuKi94dw+841CkAT6+3d36HSGJBbygJPsy7nAcKJIEyKJPxLFAfaYmAN9xJKv3G5tRMxZoWXtSy/OJJ8Js4nZ8rIvEcx8+yNg1gvwAC9bZQYXGNJvg1ydfNknMhXNr6Z2rriIdDOkwBelBIgpFDRvjvoLZXTypZAk4q1oSa2ohJELvO4yr3JEfKRc3ohtWBpP8FysJ+nVlH2nmgrVa8oPUFRJQO90t0rSZADGFY4r7yzZnZ5h/fuvIhHhX/XUvsYzBgsV93P6TZ1hIxOh6NsE4QR6b1iy1BNvr4gDIWclmComKrYlBAYDd1QQRaTZnS0TJQiKkjWVuQyZrjcFQcfn6HLaEsCQO+PoRj1yfaY47XS0NYh8vEEQd1KF88RXWXZJQjLCblrixV7fmWoDliIWXzYQWVtEecnYSIoM3p0Vp3gDXIv0GGG7MRTRUnvVygMaP1Hp/zZ5b/E85zkaQ4=
+  distributions: "sdist bdist_wheel"
+  skip_cleanup: true
